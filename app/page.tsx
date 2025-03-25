@@ -19,6 +19,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import BeforeAfter from './BeforeAfter';
 import Difference from './Difference';
+import WhyChooseDaolDental from '@/components/WhychooseDaolDental';
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
@@ -99,8 +100,10 @@ export default function Home() {
           <Difference />
         </div>
       </section>
-
       {/* About Section */}
+      <WhyChooseDaolDental />
+
+      {/* About Section
       <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -171,7 +174,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Section */}
       <section
@@ -595,7 +598,9 @@ export default function Home() {
               ></iframe>
 
               <div className="mt-4">
+
                 <h4 className="font-semibold text-[#222176] mb-2 md:text-2xl">
+
                   Insurance & Payment
                 </h4>
                 <p className="text-gray-500 mb-2">

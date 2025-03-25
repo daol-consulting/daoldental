@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -13,34 +15,47 @@ import {
   Instagram,
   CheckCircle,
 } from 'lucide-react';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import BeforeAfter from './BeforeAfter';
+import Difference from './Difference';
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-blue-50">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-[#ededed]">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="flex flex-col justify-center space-y-4">
+            <div
+              className="flex flex-col justify-center space-y-4"
+              data-aos="fade-up"
+            >
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-blue-600">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-[#222176]">
                   Advanced Care for Your Smile
                 </h1>
-                <p className="max-w-[600px] text-gray-500 md:text-xl">
+                <p className="max-w-[600px] text-black py-4 md:text-xl">
                   Welcome to Daol Dental Clinic. We combine cutting-edge
                   technology with compassionate care to provide exceptional
                   dental services for your entire family.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="/register">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                    Book Appointment
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="#services">
+                <button className="rounded-3xl bg-transparent border-[#222176] border-[2px] flex justify-center items-center text-[#222176] px-6 py-2 md:text-xl md:border-[3px]">
+                  <Link href="/register">Book Appointment</Link>
+                  <ChevronRight className="ml-2 h-6 w-6" />
+                </button>
+                {/* <Link href="#services">
                   <Button
                     size="lg"
                     variant="outline"
@@ -48,19 +63,40 @@ export default function Home() {
                   >
                     Our Services
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </div>
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-end md:relative md:top-[128px]">
               <Image
-                src="/images/dental-hero.png"
-                width={500}
-                height={500}
+                src="/images/dental-hero-no-bg.png"
+                width={800}
+                height={800}
                 alt="Modern Daol Dental Clinic reception area with comfortable seating and blue accents"
                 className="rounded-lg object-cover"
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="before-after"
+        className="w-full py-12 md:py-24 lg:py-32 bg-white"
+      >
+        <div className="container px-4 md:px-6">
+          <BeforeAfter />
+        </div>
+      </section>
+
+      <section
+        id="difference"
+        className="w-full py-12 md:py-24 lg:py-32 bg-[#f7f8fa] bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/dimmed_logo.png)',
+        }}
+      >
+        <div className="container px-4 md:px-6">
+          <Difference />
         </div>
       </section>
 

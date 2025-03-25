@@ -8,12 +8,12 @@ import { Button } from '@/components/ui/button';
 import { ThemeProvider } from '@/components/theme-provider';
 import { useState } from 'react';
 
-function Header() {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="w-full border-b border-blue-100 bg-white sticky top-0 z-50">
-      <div className="bg-blue-600 text-white py-1">
+    <header className="w-full border-b border-blue-100 bg-[#222176] sticky top-0 z-50">
+      {/* <div className="bg-blue-600 text-white py-1">
         <div className="container flex justify-between items-center px-4 md:px-6">
           <p className="text-xs md:text-sm">Now accepting new patients!</p>
           <div className="flex items-center">
@@ -21,64 +21,35 @@ function Header() {
             <span className="text-xs md:text-sm">(604) 123-4567</span>
           </div>
         </div>
-      </div>
-      <div className="container flex h-16 items-center px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2">
-          <Image
+      </div> */}
+      <div className="container flex py-2 items-center text-white px-4 md:px-6 md:py-4">
+        <div className="flex-1 ml-2">
+          <Link href="/" className="flex items-center gap-2">
+            {/* <Image
             src="/images/daol-logo.png"
             alt="Daol Dental Logo"
             width={100}
             height={100}
-          />
-          <span className="text-2xl font-bold text-blue-600">Daol Dental</span>
-        </Link>
-        <nav className="ml-auto hidden gap-6 md:flex">
-          <Link
-            href="/"
-            className="text-sm font-medium text-gray-500 hover:text-blue-600"
-          >
-            Home
-          </Link>
-          <Link
-            href="/#about"
-            className="text-sm font-medium text-gray-500 hover:text-blue-600"
-          >
-            About
-          </Link>
-          <Link
-            href="/#services"
-            className="text-sm font-medium text-gray-500 hover:text-blue-600"
-          >
-            Services
-          </Link>
-          <Link
-            href="/#team"
-            className="text-sm font-medium text-gray-500 hover:text-blue-600"
-          >
-            Our Team
-          </Link>
-          <Link
-            href="/#testimonials"
-            className="text-sm font-medium text-gray-500 hover:text-blue-600"
-          >
-            Testimonials
-          </Link>
-          <Link
-            href="/#contact"
-            className="text-sm font-medium text-gray-500 hover:text-blue-600"
-          >
-            Contact
-          </Link>
-        </nav>
-        <div className="ml-auto md:ml-4">
-          <Link href="/register">
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Book Appointment
-            </Button>
+          /> */}
+            <span className="text-2xl font-bold">DAOL DENTAL CLINIC</span>
           </Link>
         </div>
+
+        <nav className="ml-auto hidden gap-8 md:flex md:text-lg">
+          <Link href="/">Home</Link>
+          <Link href="/#about">About</Link>
+          <Link href="/#services">Services</Link>
+          <Link href="/#team">Our Team</Link>
+          <Link href="/#testimonials">Testimonials</Link>
+          <Link href="/#contact">Contact</Link>
+        </nav>
+        <div className="hidden ml-auto md:block md:ml-8">
+          <button className="rounded-3xl bg-transparent border-white border-[2px] flex justify-center items-center text-white px-6 py-2 md:text-xl md:border-[3px]">
+            <Link href="/register">Book Appointment</Link>
+          </button>
+        </div>
         <button
-          className="ml-4 rounded-md p-2 text-gray-500 md:hidden"
+          className="ml-4 rounded-md p-2 md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="sr-only">Toggle menu</span>
@@ -90,42 +61,33 @@ function Header() {
         </button>
       </div>
       {isMenuOpen && (
-        <div className="container md:hidden">
-          <nav className="flex flex-col gap-4 p-4">
-            <Link
-              href="/"
-              className="text-sm font-medium text-gray-500 hover:text-blue-600"
-            >
+        <div className="container md:hidden text-white">
+          <nav className="flex flex-col pb-2">
+            <Link href="/" className="py-2 border-b-[1px] border-gray-100">
               Home
             </Link>
             <Link
               href="/#about"
-              className="text-sm font-medium text-gray-500 hover:text-blue-600"
+              className="py-3 border-b-[1px] border-gray-100"
             >
               About
             </Link>
             <Link
               href="/#services"
-              className="text-sm font-medium text-gray-500 hover:text-blue-600"
+              className="py-3 border-b-[1px] border-gray-100"
             >
               Services
             </Link>
-            <Link
-              href="/#team"
-              className="text-sm font-medium text-gray-500 hover:text-blue-600"
-            >
+            <Link href="/#team" className="py-3 border-b-[1px] border-gray-100">
               Our Team
             </Link>
             <Link
               href="/#testimonials"
-              className="text-sm font-medium text-gray-500 hover:text-blue-600"
+              className="py-3 border-b-[1px] border-gray-100"
             >
               Testimonials
             </Link>
-            <Link
-              href="/#contact"
-              className="text-sm font-medium text-gray-500 hover:text-blue-600"
-            >
+            <Link href="/#contact" className="py-3">
               Contact
             </Link>
           </nav>
@@ -133,18 +95,6 @@ function Header() {
       )}
     </header>
   );
-}
+};
 
-// Changed from named export to default export
-export default function ClientLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <ThemeProvider attribute="class" defaultTheme="light">
-      <Header />
-      <main>{children}</main>
-    </ThemeProvider>
-  );
-}
+export default Header;

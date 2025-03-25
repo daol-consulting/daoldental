@@ -110,14 +110,14 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col text-black">
       <div className="container flex-1 px-4 py-12 md:py-24">
         <div className="mx-auto max-w-6xl space-y-8">
           <div className="space-y-2 text-center">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-600">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#222176]">
               Book Your Appointment
             </h1>
-            <p className="text-gray-500 md:text-xl">
+            <p className="md:text-xl">
               Fill out the form below to request an appointment with our dental
               team.
             </p>
@@ -385,7 +385,7 @@ export default function RegisterPage() {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700"
+                    className="w-full bg-[#222176] hover:bg-[#222176]"
                   >
                     Submit Appointment Request
                   </Button>
@@ -396,19 +396,19 @@ export default function RegisterPage() {
               <div className="sticky top-24 space-y-6">
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-blue-600 mb-4">
+                    <h3 className="text-xl font-bold text-[#222176] mb-4">
                       Contact Information
                     </h3>
                     <div className="space-y-4">
                       <div className="flex items-start space-x-3">
-                        <Phone className="h-5 w-5 text-blue-500 mt-0.5" />
+                        <Phone className="h-5 w-5 text-[#222176] mt-0.5" />
                         <div>
                           <h4 className="font-semibold">Phone</h4>
                           <p className="text-gray-500">(604) 123-4567</p>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <MapPin className="h-5 w-5 text-blue-500 mt-0.5" />
+                        <MapPin className="h-5 w-5 text-[#222176] mt-0.5" />
                         <div>
                           <h4 className="font-semibold">Location</h4>
                           <p className="text-gray-500">
@@ -418,7 +418,7 @@ export default function RegisterPage() {
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <Clock className="h-5 w-5 text-blue-500 mt-0.5" />
+                        <Clock className="h-5 w-5 text-[#222176] mt-0.5" />
                         <div>
                           <h4 className="font-semibold">Business Hours</h4>
                           <p className="text-gray-500">
@@ -438,7 +438,7 @@ export default function RegisterPage() {
                 </Card>
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-blue-600 mb-4">
+                    <h3 className="text-xl font-bold text-[#222176] mb-4">
                       New Patient Special
                     </h3>
                     <div className="mb-4">

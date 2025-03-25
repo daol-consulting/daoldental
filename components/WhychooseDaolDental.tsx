@@ -39,11 +39,11 @@ export default function WhyChooseDaolDental() {
       <div className="container px-4 md:px-6">
         {/* 제목 영역 */}
         <div data-aos="fade-up" className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#222176] mb-4">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-[#222176] mb-4">
             Why so many{' '}
             <span className="font-black">patients choose Daol Dental</span>
           </h2>
-          <p className="max-w-3xl mx-auto text-gray-700 md:text-xl lg:text-base xl:text-xl font-medium">
+          <p className="max-w-3xl mx-auto text-gray-700 text-base sm:text-lg md:text-xl font-medium">
             <b>
               [ One-Day Treatments / Advanced Implants / Specialized
               Orthodontics ]
@@ -55,7 +55,7 @@ export default function WhyChooseDaolDental() {
         </div>
 
         {/* 3개 카드 */}
-        <div className="grid gap-6 md:grid-cols-3 mb-16">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-3 mb-16">
           {reasons.map((item, idx) => (
             <div
               key={idx}
@@ -68,17 +68,17 @@ export default function WhyChooseDaolDental() {
                 alt={item.title}
                 width={500}
                 height={300}
-                className="w-full h-64 object-cover"
+                className="w-full h-48 md:h-64 object-cover"
               />
               <div className="absolute inset-0 bg-[#222176] bg-opacity-60" />
               <div className="absolute top-4 left-4 right-4 text-white z-10">
-                <span className="inline-block mb-2 text-xs font-semibold px-3 py-1 bg-[#222176] rounded-full w-fit">
+                <span className="inline-block mb-2 text-[10px] sm:text-xs font-semibold px-3 py-1 bg-[#222176] rounded-full w-fit">
                   {item.title}
                 </span>
-                <h3 className="text-base font-bold leading-snug mb-1">
+                <h3 className="text-sm sm:text-base font-bold leading-snug mb-1">
                   {item.heading}
                 </h3>
-                <p className="text-sm text-white text-opacity-90 leading-relaxed">
+                <p className="text-xs sm:text-sm text-white text-opacity-90 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -88,16 +88,16 @@ export default function WhyChooseDaolDental() {
 
         {/* 진료팀 소개 */}
         <div
-          className="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden px-6 py-10 md:px-10"
+          className="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden px-4 py-8 sm:px-6 md:px-10 md:py-10"
           data-aos="fade-up"
           data-aos-delay="400"
         >
           <div className="flex flex-col items-center text-center space-y-6">
-            <div className="w-full max-w-4xl">
-              <span className="inline-block bg-[#222176] text-white text-xs font-semibold px-4 py-1 rounded-full mb-3">
+            <div className="w-full max-w-3xl">
+              <span className="inline-block bg-[#222176] text-white text-[11px] sm:text-xs font-semibold px-4 py-1 rounded-full mb-3">
                 Expert Care & Convenience
               </span>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2">
                 12 dental specialists provide evening care 365 days a year to
                 support your treatment needs.
               </h3>
@@ -115,7 +115,7 @@ export default function WhyChooseDaolDental() {
                   alt="Daol Dental Specialists Group"
                   width={1200}
                   height={300}
-                  className="w-full h-[220px] object-contain bg-white"
+                  className="w-full h-[160px] sm:h-[200px] md:h-[220px] object-contain bg-white"
                 />
               </div>
             </div>

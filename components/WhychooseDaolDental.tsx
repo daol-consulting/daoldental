@@ -36,7 +36,7 @@ export default function WhyChooseDaolDental() {
 
   return (
     <section className="w-full bg-white py-16">
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
+      <div className="mx-auto">
         {/* 제목 영역 */}
         <div data-aos="fade-up" className="mb-12 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-bold text-[#222176] leading-snug mb-4">

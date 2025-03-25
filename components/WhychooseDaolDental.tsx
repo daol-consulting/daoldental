@@ -35,15 +35,15 @@ export default function WhyChooseDaolDental() {
   }, []);
 
   return (
-    <section className="w-full bg-white py-16">
-      <div className="mx-auto">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
+      <div className="container px-4 md:px-6">
         {/* 제목 영역 */}
-        <div data-aos="fade-up" className="mb-12 text-center md:text-left">
-          <h2 className="text-2xl md:text-4xl font-bold text-[#222176] leading-snug mb-4">
+        <div data-aos="fade-up" className="mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#222176] mb-4">
             Why so many{' '}
             <span className="font-black">patients choose Daol Dental</span>
           </h2>
-          <p className="text-gray-700 font-medium text-base md:text-lg">
+          <p className="max-w-3xl mx-auto text-gray-700 md:text-xl lg:text-base xl:text-xl font-medium">
             <b>
               [ One-Day Treatments / Advanced Implants / Specialized
               Orthodontics ]
@@ -54,16 +54,15 @@ export default function WhyChooseDaolDental() {
           </p>
         </div>
 
-        {/* 상단 3개 카드 */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        {/* 3개 카드 */}
+        <div className="grid gap-6 md:grid-cols-3 mb-16">
           {reasons.map((item, idx) => (
             <div
               key={idx}
-              className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+              className="relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
               data-aos="fade-up"
               data-aos-delay={idx * 100}
             >
-              {/* 배경 이미지 */}
               <Image
                 src={item.img}
                 alt={item.title}
@@ -71,13 +70,9 @@ export default function WhyChooseDaolDental() {
                 height={300}
                 className="w-full h-64 object-cover"
               />
-
-              {/* 파란 오버레이 */}
-              <div className="absolute inset-0 bg-blue-900 bg-opacity-60" />
-
-              {/* 텍스트: 왼쪽 상단 배치 */}
+              <div className="absolute inset-0 bg-[#222176] bg-opacity-60" />
               <div className="absolute top-4 left-4 right-4 text-white z-10">
-                <span className="inline-block mb-2 text-xs font-semibold px-3 py-1 bg-blue-800 text-white rounded-full w-fit">
+                <span className="inline-block mb-2 text-xs font-semibold px-3 py-1 bg-[#222176] rounded-full w-fit">
                   {item.title}
                 </span>
                 <h3 className="text-base font-bold leading-snug mb-1">
@@ -91,16 +86,15 @@ export default function WhyChooseDaolDental() {
           ))}
         </div>
 
-        {/* 하단 진료팀 소개 */}
+        {/* 진료팀 소개 */}
         <div
-          className="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden px-6 py-8 md:px-10 md:py-10"
+          className="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden px-6 py-10 md:px-10"
           data-aos="fade-up"
           data-aos-delay="400"
         >
           <div className="flex flex-col items-center text-center space-y-6">
-            {/* 텍스트 영역 */}
             <div className="w-full max-w-4xl">
-              <span className="inline-block bg-blue-800 text-white text-xs font-semibold px-4 py-1 rounded-full mb-3">
+              <span className="inline-block bg-[#222176] text-white text-xs font-semibold px-4 py-1 rounded-full mb-3">
                 Expert Care & Convenience
               </span>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
@@ -114,11 +108,10 @@ export default function WhyChooseDaolDental() {
               </p>
             </div>
 
-            {/* 이미지 영역 */}
             <div className="w-full max-w-5xl mt-4">
-              <div className="rounded-xl overflow-hidden ">
+              <div className="rounded-xl overflow-hidden">
                 <Image
-                  src="/images/new_main/group.png" // ← 실제 경로로 조정
+                  src="/images/new_main/group.png"
                   alt="Daol Dental Specialists Group"
                   width={1200}
                   height={300}

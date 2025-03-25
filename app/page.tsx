@@ -172,6 +172,7 @@ export default function Home() {
         </div>
       </section>
 
+      <WhyChooseDaolDental />
       {/* About Section
       <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white">
         <div className="container px-4 md:px-6">

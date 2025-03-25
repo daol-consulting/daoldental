@@ -100,8 +100,77 @@ export default function Home() {
           <Difference />
         </div>
       </section>
-      {/* About Section */}
-      <WhyChooseDaolDental />
+
+      {/* Technology Section */}
+      <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#222176]">
+                Advanced Technology
+              </h2>
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
+                At Daol Dental Clinic, we invest in cutting-edge technology to
+                enhance diagnosis accuracy, treatment efficiency, and patient
+                comfort.
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto grid max-w-5xl items-center gap-8 py-12 md:grid-cols-2">
+            <div className="flex flex-col space-y-4">
+              <h3 className="text-2xl font-bold text-[#222176]">
+                Our Advanced Equipment
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  {
+                    title: 'Digital 3D Imaging',
+                    description:
+                      'Precise diagnostics with minimal radiation exposure',
+                  },
+                  {
+                    title: 'Intraoral Scanners',
+                    description:
+                      'Digital impressions without uncomfortable traditional molds',
+                  },
+                  {
+                    title: 'Dental Lasers',
+                    description:
+                      'Less invasive treatments with faster healing times',
+                  },
+                  {
+                    title: 'CAD/CAM Technology',
+                    description:
+                      'Same-day crowns and restorations custom-made in our office',
+                  },
+                  {
+                    title: 'Soft Tissue Management',
+                    description:
+                      'Precision gum treatments with minimal discomfort',
+                  },
+                ].map((tech, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-[#222176] mt-0.5 mr-2 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold">{tech.title}</h4>
+                      <p className="text-gray-500">{tech.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/images/dental-tech.png"
+                width={500}
+                height={400}
+                alt="Daol Dental Clinic's advanced 3D imaging system and digital scanner"
+                className="rounded-lg object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* About Section
       <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white">
@@ -179,15 +248,15 @@ export default function Home() {
       {/* Services Section */}
       <section
         id="services"
-        className="w-full py-12 md:py-24 lg:py-32 bg-blue-50"
+        className="w-full py-12 md:py-24 lg:py-32 bg-[#222176] text-white"
       >
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-600">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Our Services
               </h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
+              <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
                 We offer a comprehensive range of dental services using the
                 latest techniques and technologies to ensure optimal results
                 with minimal discomfort.
@@ -253,7 +322,7 @@ export default function Home() {
             ].map((service, index) => (
               <Card
                 key={index}
-                className="overflow-hidden border-blue-100 bg-white"
+                className="overflow-hidden border-blue-100 bg-white rounded-3xl"
               >
                 <Image
                   src={service.image || '/placeholder.svg'}
@@ -263,84 +332,13 @@ export default function Home() {
                   className="aspect-video object-cover w-full"
                 />
                 <CardContent className="p-4">
-                  <h3 className="text-xl font-bold text-blue-600 mb-2">
+                  <h3 className="text-xl font-bold text-[#222176] mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-gray-500">{service.description}</p>
+                  <p className="text-black">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-600">
-                Advanced Technology
-              </h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
-                At Daol Dental Clinic, we invest in cutting-edge technology to
-                enhance diagnosis accuracy, treatment efficiency, and patient
-                comfort.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto grid max-w-5xl items-center gap-8 py-12 md:grid-cols-2">
-            <div className="flex flex-col space-y-4">
-              <h3 className="text-2xl font-bold text-blue-600">
-                Our Advanced Equipment
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  {
-                    title: 'Digital 3D Imaging',
-                    description:
-                      'Precise diagnostics with minimal radiation exposure',
-                  },
-                  {
-                    title: 'Intraoral Scanners',
-                    description:
-                      'Digital impressions without uncomfortable traditional molds',
-                  },
-                  {
-                    title: 'Dental Lasers',
-                    description:
-                      'Less invasive treatments with faster healing times',
-                  },
-                  {
-                    title: 'CAD/CAM Technology',
-                    description:
-                      'Same-day crowns and restorations custom-made in our office',
-                  },
-                  {
-                    title: 'Soft Tissue Management',
-                    description:
-                      'Precision gum treatments with minimal discomfort',
-                  },
-                ].map((tech, index) => (
-                  <li key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold">{tech.title}</h4>
-                      <p className="text-gray-500">{tech.description}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src="/images/dental-tech.png"
-                width={500}
-                height={400}
-                alt="Daol Dental Clinic's advanced 3D imaging system and digital scanner"
-                className="rounded-lg object-cover"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -419,7 +417,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-600">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#222176]">
                 What Our Patients Say
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
@@ -468,13 +466,13 @@ export default function Home() {
               },
             ].map((testimonial, index) => (
               <Card key={index} className="border-blue-100 bg-white">
-                <CardContent className="p-6">
+                <CardContent className="p-6 !h-full flex">
                   <div className="flex flex-col gap-4">
-                    <div className="text-lg italic text-gray-500">
+                    <div className="text-lg italic text-gray-500 flex flex-1">
                       "{testimonial.quote}"
                     </div>
-                    <div>
-                      <div className="font-semibold text-blue-600">
+                    <div className="flex flex-col">
+                      <div className="font-semibold text-[#222176]">
                         {testimonial.name}
                       </div>
                       <div className="text-sm text-gray-500">
@@ -598,9 +596,7 @@ export default function Home() {
               ></iframe>
 
               <div className="mt-4">
-
                 <h4 className="font-semibold text-[#222176] mb-2 md:text-2xl">
-
                   Insurance & Payment
                 </h4>
                 <p className="text-gray-500 mb-2">

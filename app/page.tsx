@@ -343,11 +343,17 @@ export default function Home() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="w-full py-12 md:py-24 lg:py-32 bg-blue-50">
+      <section
+        id="team"
+        className="w-full py-12 md:py-24 lg:py-32 bg-[#f7f8fa] bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/dimmed_logo.png)',
+        }}
+      >
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-600">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#222176]">
                 Meet Our Team
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
@@ -356,46 +362,28 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 name: 'Dr. James Park',
                 role: 'Lead Dentist & Founder',
                 bio: 'Dr. Park has over 15 years of experience specializing in cosmetic and restorative dentistry. He completed his advanced training at the University of Pennsylvania and is committed to continuing education in the latest dental techniques.',
-                image: '/images/team/dr-park.png',
+                image: '/images/team/dr-joo.webp',
               },
               {
                 name: 'Dr. Michelle Kim',
                 role: 'Orthodontist',
                 bio: 'Board-certified in orthodontics, Dr. Kim specializes in both traditional braces and clear aligner therapy. She is passionate about creating beautiful smiles for patients of all ages.',
-                image: '/images/team/dr-kim.png',
+                image: '/images/team/dr-han.webp',
               },
               {
                 name: 'Dr. David Chen',
                 role: 'Periodontist',
                 bio: 'Dr. Chen focuses on gum health and implant dentistry. His gentle approach to periodontal treatment has helped countless patients restore their oral health and confidence.',
-                image: '/images/team/dr-chen.png',
-              },
-              {
-                name: 'Dr. Sarah Johnson',
-                role: 'Pediatric Dentist',
-                bio: 'With a special talent for making children feel comfortable, Dr. Johnson creates positive dental experiences that set the foundation for lifelong oral health habits.',
-                image: '/images/team/dr-johnson.png',
-              },
-              {
-                name: 'Jennifer Lopez',
-                role: 'Dental Hygienist',
-                bio: 'Jennifer has been with Daol Dental for 8 years, providing thorough yet gentle cleanings. She excels at patient education and preventative care strategies.',
-                image: '/images/team/dr-lopez.png',
-              },
-              {
-                name: 'Michael Rodriguez',
-                role: 'Dental Assistant',
-                bio: "Michael's attention to detail and caring nature help ensure that all procedures run smoothly. He's known for his ability to put anxious patients at ease.",
-                image: '/images/team/dr-rodriguez.png',
+                image: '/images/team/dr-ma.png',
               },
             ].map((member, index) => (
-              <Card key={index} className="overflow-hidden border-blue-100">
+              <Card key={index} className="overflow-hidden rounded-3xl">
                 <div className="aspect-square overflow-hidden">
                   <Image
                     src={member.image || '/placeholder.svg'}
@@ -405,12 +393,14 @@ export default function Home() {
                     className="h-full w-full object-cover transition-all hover:scale-105"
                   />
                 </div>
-                <CardContent className="p-4">
-                  <h3 className="text-xl font-bold text-blue-600">
+                <CardContent className="p-4 md:p-8">
+                  <h3 className="text-xl font-bold text-[#222176] md:text-2xl">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-blue-500 mb-2">{member.role}</p>
-                  <p className="text-gray-500">{member.bio}</p>
+                  <p className="text-sm text-[#222176] mb-2 md:text-lg">
+                    {member.role}
+                  </p>
+                  <p className="text-black">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}
@@ -497,36 +487,24 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-blue-600 text-white">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-[#222176] text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-2xl font-bold tracking-tighter md:text-5xl">
                 Ready to Transform Your Smile?
               </h2>
-              <p className="max-w-[600px] text-blue-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
+              <p className="max-w-[600px] text-blue-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto pt-2">
                 Book your appointment today and experience the Daol Dental
                 difference. New patients receive a comprehensive exam and
                 consultation at a special introductory rate.
               </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/register">
-                <Button
-                  size="lg"
-                  className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 text-base font-semibold"
-                >
-                  Book Appointment
-                </Button>
-              </Link>
-              <Link href="#contact">
-                <Button
-                  size="lg"
-                  className="bg-transparent border border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 text-base font-semibold"
-                >
-                  Contact Us
-                </Button>
-              </Link>
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <button className="rounded-3xl bg-transparent border-white border-[2px] flex justify-center items-center text-white px-6 py-2 md:text-xl md:border-[3px]">
+                <Link href="/register">Book Apppointment</Link>
+                <ChevronRight className="ml-2 h-6 w-6" />
+              </button>
             </div>
           </div>
         </div>
@@ -540,14 +518,14 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">
+              <h3 className="text-2xl font-bold text-[#222176] mb-4 md:text-4xl">
                 Daol Dental Clinic
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="h-5 w-5 text-blue-500 mt-0.5" />
+                  <MapPin className="h-5 w-5 text-[#222176] mt-0.5 md:h-6 md:w-6" />
                   <div>
-                    <h4 className="font-semibold">Location</h4>
+                    <h4 className="font-semibold md:text-2xl">Location</h4>
                     <p className="text-gray-500">
                       123 Vancouver Avenue, Suite 200
                     </p>
@@ -555,9 +533,11 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Clock className="h-5 w-5 text-blue-500 mt-0.5" />
+                  <Clock className="h-5 w-5 text-[#222176] mt-0.5 md:h-6 md:w-6" />
                   <div>
-                    <h4 className="font-semibold">Business Hours</h4>
+                    <h4 className="font-semibold md:text-2xl">
+                      Business Hours
+                    </h4>
                     <p className="text-gray-500">
                       Monday - Thursday: 8:00 AM - 6:00 PM
                     </p>
@@ -569,32 +549,32 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Phone className="h-5 w-5 text-blue-500 mt-0.5" />
+                  <Phone className="h-5 w-5 text-[#222176] mt-0.5 md:h-6 md:w-6" />
                   <div>
-                    <h4 className="font-semibold">Phone</h4>
+                    <h4 className="font-semibold md:text-2xl">Phone</h4>
                     <p className="text-gray-500">(604) 123-4567</p>
                     <p className="text-gray-500">Emergency: (604) 123-4567</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Mail className="h-5 w-5 text-blue-500 mt-0.5" />
+                  <Mail className="h-5 w-5 text-[#222176] mt-0.5 md:h-6 md:w-6" />
                   <div>
-                    <h4 className="font-semibold">Email</h4>
+                    <h4 className="font-semibold md:text-2xl">Email</h4>
                     <p className="text-gray-500">appointments@daoldental.com</p>
                     <p className="text-gray-500">info@daoldental.com</p>
                   </div>
                 </div>
               </div>
               <div className="mt-6 flex space-x-4">
-                <Link href="#" className="text-blue-500 hover:text-blue-600">
+                <Link href="#" className="text-[#222176] hover:text-[#222176]">
                   <Facebook className="h-6 w-6" />
                   <span className="sr-only">Facebook</span>
                 </Link>
-                <Link href="#" className="text-blue-500 hover:text-blue-600">
+                <Link href="#" className="text-[#222176] hover:text-[#222176]">
                   <Twitter className="h-6 w-6" />
                   <span className="sr-only">Twitter</span>
                 </Link>
-                <Link href="#" className="text-blue-500 hover:text-blue-600">
+                <Link href="#" className="text-[#222176] hover:text-[#222176]">
                   <Instagram className="h-6 w-6" />
                   <span className="sr-only">Instagram</span>
                 </Link>
@@ -615,7 +595,7 @@ export default function Home() {
               ></iframe>
 
               <div className="mt-4">
-                <h4 className="font-semibold text-blue-600 mb-2">
+                <h4 className="font-semibold text-[#222176] mb-2 md:text-2xl">
                   Insurance & Payment
                 </h4>
                 <p className="text-gray-500 mb-2">
